@@ -1,0 +1,132 @@
+.card {
+    background-color: white;
+    width: 75vw;
+    max-width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.35);
+    
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 7px;
+        background-color: rgb(36, 36, 36);
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
+
+        h1 {
+            color: white;
+            letter-spacing: 3px;
+            margin-right: 5px;
+        }
+
+        img {
+            width: 65px;
+            height: 65px;
+            margin-left: 5px;
+        }
+    }
+
+    .main-data {
+        background-color: transparent;
+        border: 3px solid rgb(36, 36, 36);
+        padding: 15px;
+
+        .price-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: -5px;
+
+            .price {
+                color: rgb(36, 36, 36);
+                letter-spacing: 2px;
+                font-size: 2rem;
+            }
+
+            .usd-text {
+                font-size: 1.2rem;
+                color:rgb(150, 150, 150);
+                -webkit-text-stroke: 1.5px rgb(150, 150, 150);
+                letter-spacing: 2px;
+                margin-bottom: 4px;
+                margin-left: 7px;
+            }
+        }
+
+        .percent-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .heading-and-percent-container {
+                width: 100%;
+
+                .time-text {
+                    font-size: .85rem;
+                    color:rgb(150, 150, 150);
+                    margin-bottom: 0px;
+                    margin: 0px;
+                }
+            }
+
+            .hr1-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            
+            .day1-container {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+            }
+
+            .center-line {
+                border-left: 3px solid rgb(150, 150, 150);
+                border-radius: 10px;
+                height: 60px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .percent-number-positive {
+                font-size: 1.35rem;
+                margin: 0px;
+                letter-spacing: 1px;
+                color: darkgreen;
+            }
+
+            .percent-number-negative {
+                font-size: 1.35rem;
+                margin: 0px;
+                letter-spacing: 1px;
+                color: darkred;
+            }
+
+            .percent-sign-text {
+                font-size: 1rem;
+                color:rgb(150, 150, 150);
+                margin-bottom: 0px;
+                margin-top: 4px;
+                margin-left: 5px; 
+            }
+
+            .up-trending {
+                margin-top: 6px;
+                margin-right: 5px;
+                color: darkgreen;
+            }
+
+            .down-trending {
+                margin-top: 6px;
+                margin-right: 5px;
+                color: darkred;
+            }
+        }
+    }
+}

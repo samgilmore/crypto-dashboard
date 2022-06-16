@@ -1,0 +1,57 @@
+<div class="card">
+    <div class="header">
+        <h1>
+            {{ name }}
+        </h1>
+        <img src="{{ imgSrc }}"/>
+    </div>
+    <div class="main-data">
+        <div class="price-container">
+            <h2 class="price">
+                {{ price }}
+            </h2>
+            <h1 class="usd-text">
+                USD
+            </h1>
+        </div>
+        <div class="percent-container">
+            <div class="heading-and-percent-container">
+                <h1 class="time-text">
+                    1 HR
+                </h1>
+                <div class="hr1-container">
+                    <mat-icon *ngIf="changeHrPositive" class="up-trending">trending_up</mat-icon>
+                    <h2 *ngIf="changeHrPositive" class="percent-number-positive">
+                        {{ changeHr }}
+                    </h2>
+                    <mat-icon *ngIf="!changeHrPositive" class="down-trending">trending_down</mat-icon>
+                    <h2 *ngIf="!changeHrPositive" class="percent-number-negative">
+                        {{ changeHr }}
+                    </h2>
+                    <h1 class="percent-sign-text">
+                        %
+                    </h1>
+                </div>
+            </div>
+            <div class="center-line"></div>
+            <div class="heading-and-percent-container">
+                <h1 class="time-text">
+                    1 DAY
+                </h1>
+                <div class="day1-container">
+                    <mat-icon *ngIf="changeDayPositive" class="up-trending">trending_up</mat-icon>
+                    <h2 *ngIf="changeDayPositive" class="percent-number-positive">
+                        {{ changeDay }}
+                    </h2>
+                    <mat-icon *ngIf="!changeDayPositive" class="down-trending">trending_down</mat-icon>
+                    <h2 *ngIf="!changeDayPositive" class="percent-number-negative">
+                        {{ changeDay }}
+                    </h2>
+                    <h1 class="percent-sign-text">
+                        %
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
