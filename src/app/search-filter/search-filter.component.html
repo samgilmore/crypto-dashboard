@@ -1,0 +1,12 @@
+<div class="wrapper">
+    SEARCH FILTER
+    <ng-multiselect-dropdown
+        [settings]="dropdownSettings"
+        [data]="dropdownList"
+        (onSelect)="onItemSelect($event)"
+        (onDeSelect)="onItemDeSelect($event)"
+        (onSelectAll)="onSelectAll()"
+        (onDeSelectAll)="onDeSelectAll()"
+    >
+    </ng-multiselect-dropdown>
+</div>
