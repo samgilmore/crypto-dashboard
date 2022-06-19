@@ -1,3 +1,5 @@
+$main-color: #510080;
+
 .card {
     background-color: white;
     width: 75vw;
@@ -14,7 +16,7 @@
         justify-content: center;
         align-items: center;
         padding: 7px;
-        background-color: rgb(36, 36, 36);
+        background-color: $main-color;
         box-shadow: 0 2px 2px rgba(0, 0, 0, 0.35);
 
         h1 {
@@ -32,7 +34,7 @@
 
     .main-data {
         background-color: transparent;
-        border: 3px solid rgb(36, 36, 36);
+        border: 3px solid $main-color;
         padding: 15px;
 
         .price-container {
