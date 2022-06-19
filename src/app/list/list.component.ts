@@ -19,20 +19,31 @@ export class ListComponent implements OnInit {
   getData() {
 
     this.dataService.fetchData()
-      .subscribe(res => {
-        this.selectedCurrencies = [];
-        this.rawData = res.DISPLAY;
-        console.log(this.rawData);
+      .subscribe(
+        (res: { DISPLAY: any; }) => {
 
-        Object.entries(this.rawData).forEach(entry => {
-          console.log(entry);
-          this.selectedCurrencies.push(entry);
-        });
+          this.rawData = res.DISPLAY;
 
-        this.updated = true;
-        this.dateTime = new Date();
-      });
+          if(this.rawData == undefined) {
+            console.log("SELECT A COIN: ");
+            this.selectedCurrencies = [];
+            this.updated = false;
+          } else {
+            console.log("RAW: " + this.rawData);
 
+            this.selectedCurrencies = [];
+
+            Object.entries(this.rawData).forEach(entry => {
+              console.log(entry);
+              this.selectedCurrencies.push(entry);
+            });
+
+            this.updated = true;
+            this.dateTime = new Date();
+
+          }
+        }
+      );  
   }
 
   ngOnInit(): void {

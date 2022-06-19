@@ -4,7 +4,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 
 import { environment } from 'src/environments/environment';
 
-import { map } from 'rxjs';
+import { catchError, map, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ import { map } from 'rxjs';
 export class DataService {
 
   private allCoinData: any;
+  selectedCoins: string[] = [];
 
   constructor(private _http: HttpClient, @Optional() @SkipSelf() sharedService?: DataService) { 
     if (sharedService) {
@@ -24,13 +25,21 @@ export class DataService {
 
   fetchData() {
 
-    const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH,XRP,LTC,BCH,XLM&tsyms=USD&api_key={${environment.apiKey}}`;
-    //const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD&api_key={${environment.apiKey}}`;
-    let params = new HttpParams();
+      let coins = this.selectedCoins.join(',');
+    
+      const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ coins }&tsyms=USD&api_key={${ environment.apiKey }}`;
+      //const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD&api_key={${environment.apiKey}}`;
 
-    //Make the API call (NEW)
-    return this._http.get<any>(URL, {params})
-      .pipe(map( data => this.allCoinData = data));
+      console.log(URL);
+
+      //Make the API call (NEW)
+      return this._http.get<any>(URL);
+      
+        // .pipe(
+        //   catchError((err) => {
+        //     console.log('error caught in service')
+        //     console.error(err);
+        //   })
+        // );
   }
-
 }

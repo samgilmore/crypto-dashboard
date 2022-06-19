@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { IDropdownSettings } from 'ng-multiselect-dropdown';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-search-filter',
@@ -12,7 +13,7 @@ export class SearchFilterComponent implements OnInit {
   dropdownSettings: IDropdownSettings = {};
   selectedItems: string[] = [];
 
-  constructor() { 
+  constructor(private dataService: DataService) { 
   }
 
   ngOnInit(): void {
@@ -37,24 +38,25 @@ export class SearchFilterComponent implements OnInit {
 
   onItemSelect(item: any) {
     console.log(item);
-    this.selectedItems.push(item.item_id);
+    //this.selectedItems.push(item.item_id);
+    this.dataService.selectedCoins.push(item.item_id);
   }
 
   onItemDeSelect(item: any) {
-    let index = this.selectedItems.indexOf(item.item_id);
-    console.log("Removing: " + this.selectedItems[index]);
+    let index = this.dataService.selectedCoins.indexOf(item.item_id);
+    console.log("Removing: " + this.dataService.selectedCoins[index]);
 
     if (index !== -1) {
-      this.selectedItems.splice(index, 1);
+      this.dataService.selectedCoins.splice(index, 1);
     }
   }
 
   onSelectAll() {
-    this.selectedItems = ["BTC","ETH","XRP","LTC","BCH","XLM"];
+    this.dataService.selectedCoins = ["BTC","ETH","XRP","LTC","BCH","XLM"];
   }
 
   onDeSelectAll() {
-    this.selectedItems = [];
+    this.dataService.selectedCoins = [];
   }
 
 }

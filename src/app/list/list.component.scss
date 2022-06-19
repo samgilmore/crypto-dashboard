@@ -1,3 +1,5 @@
+$purple-color: #510080;
+
 .date-and-time {
     width: 75vw;
     max-width: 550px;
@@ -13,7 +15,6 @@
     h3 {
         margin: 0;
         font-size: .9rem;
-        
     }
 
     p {
@@ -21,4 +22,60 @@
         margin: 0;
         letter-spacing: .25px;
     }
+}
+
+.mat-raised-button {
+    background-color: $purple-color !important;
+    color: white !important;
+    font-family: 'Poppins', sans-serif !important;
+    letter-spacing: 1px !important;
+    height: 50px !important;
+    width: 100px !important;
+    margin-top: 15px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.35), 0 6px 20px 0 rgba(0, 0, 0, 0.35) !important;
+    transition-duration: 0.4s !important;
+    -webkit-transition-duration: 0.4s !important;
+}
+
+.mat-raised-button:hover {
+    transition-duration: 0.1s !important;
+    background-color: #350054 !important;
+  }
+  
+.mat-raised-button:after {
+    content: "" !important;
+    display: block !important;
+    position: absolute !important;
+    border-radius: 4em !important;
+    left: 0 !important;
+    top:0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    opacity: 0 !important;
+    transition: all 0.5s !important;
+    box-shadow: 0 0 10px 40px white !important;
+  }
+  
+.mat-raised-button:active:after {
+    box-shadow: 0 0 0 0 white !important;
+    position: absolute !important;
+    border-radius: 4em !important;
+    left: 0 !important;
+    top: 0 !important;
+    opacity: 1 !important;
+    transition: 0s !important;
+  }
+  
+.mat-raised-button:active {
+    top: 1px !important;
+  }
+
+.button-div {
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
 }

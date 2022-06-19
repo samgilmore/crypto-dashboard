@@ -6,3 +6,7 @@ body {
     background-color: $background-color;
     font-family: 'Poppins', sans-serif;
 }
+
+:host ::ng-deep .multiselect-dropdown .dropdown-btn .selected-item-container .selected-item {
+    background: red;
+}

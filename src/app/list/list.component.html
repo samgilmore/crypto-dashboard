@@ -1,4 +1,11 @@
-<button (click)="getData()">UPDATE</button>
+<div class="button-div" >
+    <button 
+        mat-raised-button 
+        (click)="getData()" 
+    >
+        UPDATE
+    </button>   
+</div>
 <div *ngIf=updated class="date-and-time">
     <h3>Last Updated :</h3>
     <p>{{ dateTime | date:'mediumTime'}}, {{ dateTime | date:'shortDate' }}</p>
