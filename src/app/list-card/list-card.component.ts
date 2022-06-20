@@ -1,9 +1,19 @@
 import { Component, Input, OnInit } from '@angular/core';
 
+import { trigger, transition, animate, style } from '@angular/animations';
+
 @Component({
   selector: 'app-list-card',
   templateUrl: './list-card.component.html',
-  styleUrls: ['./list-card.component.scss']
+  styleUrls: ['./list-card.component.scss'],
+  animations: [
+    trigger('slideIn', [
+      transition(':enter', [
+        style({transform: 'translateX(-100%)'}),
+        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+      ])
+    ])
+  ]
 })
 export class ListCardComponent implements OnInit {
 

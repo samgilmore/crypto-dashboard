@@ -16,7 +16,6 @@ import { DataService } from './data.service';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatRippleModule } from '@angular/material/core';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
@@ -35,7 +34,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     HttpClientModule,
     MatIconModule,
     MatButtonModule,
-    MatRippleModule,
     BrowserAnimationsModule
   ],
   providers: [DataService],

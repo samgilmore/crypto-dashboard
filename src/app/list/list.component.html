@@ -6,7 +6,7 @@
         UPDATE
     </button>   
 </div>
-<div *ngIf=updated class="date-and-time">
+<div *ngIf=updated [@slideIn] class="date-and-time">
     <h3>Last Updated :</h3>
     <p>{{ dateTime | date:'mediumTime'}}, {{ dateTime | date:'shortDate' }}</p>
 </div>

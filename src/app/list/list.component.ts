@@ -1,10 +1,19 @@
+import { animate, style, transition, trigger } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.scss']
+  styleUrls: ['./list.component.scss'],
+  animations: [
+    trigger('slideIn', [
+      transition(':enter', [
+        style({transform: 'translateX(100%)'}),
+        animate('200ms ease-in', style({transform: 'translateX(0%)'}))
+      ])
+    ])
+  ]
 })
 export class ListComponent implements OnInit {
 

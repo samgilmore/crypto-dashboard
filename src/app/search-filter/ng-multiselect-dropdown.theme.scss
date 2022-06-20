@@ -21,7 +21,7 @@ $disable-background-color: #eceeef;
     vertical-align: middle;
     cursor: pointer;
     background-image: none;
-    border-radius: 4px;
+    border-radius: 4em;
     .selected-item {
       border: 1px solid $base-color !important;
       margin-right: 4px;
@@ -30,7 +30,7 @@ $disable-background-color: #eceeef;
       padding-top: 3px !important;
       padding-bottom: 3px !important;
       color: #fff;
-      border-radius: 2px;
+      border-radius: 8px !important;
       float: left;
       text-align: center !important;
       width: 90px !important;
