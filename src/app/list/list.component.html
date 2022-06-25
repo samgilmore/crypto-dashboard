@@ -10,4 +10,22 @@
     <h3>Last Updated :</h3>
     <p>{{ dateTime | date:'mediumTime'}}, {{ dateTime | date:'shortDate' }}</p>
 </div>
-<app-list-card *ngFor="let entry of selectedCurrencies" [entry]="entry"></app-list-card>
+<div>
+    <ngx-charts-line-chart *ngIf=updated
+        [view]="[1000,400]"
+        [results]="refined_bitcoin_data"
+        [xAxisLabel]="'Date'"
+        [timeline]="true"
+        [yAxisLabel]="'Price (USD)'"
+        [legend]="false"
+        [showXAxisLabel]="true"
+        [showYAxisLabel]="true"
+        [xAxis]="true"
+        [yAxis]="true"
+        [gradient]="true"
+        [scheme]="'night'">
+    >
+
+    </ngx-charts-line-chart>
+</div>
+<app-list-card *ngFor="let entry of selectedCurrencies" [entry]="entry" [chart_data]="refined_bitcoin_data"></app-list-card>

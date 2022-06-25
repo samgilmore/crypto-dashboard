@@ -18,6 +18,7 @@ import { trigger, transition, animate, style } from '@angular/animations';
 export class ListCardComponent implements OnInit {
 
   @Input() entry: any;
+  @Input() chart_data: any;
   name: string;
   price: string;
   imgSrc: string;

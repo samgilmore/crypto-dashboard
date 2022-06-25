@@ -32,14 +32,18 @@ export class DataService {
 
       console.log(URL);
 
-      //Make the API call (NEW)
+      //Make the API call
       return this._http.get<any>(URL);
-      
-        // .pipe(
-        //   catchError((err) => {
-        //     console.log('error caught in service')
-        //     console.error(err);
-        //   })
-        // );
   }
+
+  testCryptoAPI() {
+    let url = "http://localhost:8080/";
+    return this._http.get(url, { responseType: "json" });
+  }
+
+  testBitcoin() {
+    let url = "http://localhost:8080/data/bitcoin";
+    return this._http.get(url, { responseType: "json" });
+  }
+
 }
