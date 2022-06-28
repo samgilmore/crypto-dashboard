@@ -5,7 +5,8 @@ const db = mysql.createConnection({
     host    : 'localhost',
     user    : 'root',
     password: 'password',
-    database: 'crypto_data'
+    database: 'crypto_data',
+    multipleStatements: true
 })
 
 db.connect();
@@ -29,7 +30,7 @@ app.get("/", async (req, res) => {
     res.json({ status: "Crypto REST API is running." })
 });
 
-//GET request that returns date/price of crypto data for BTC
+//GET request that returns date/price of crypto data for BTC (used for testing)
 app.get("/data/bitcoin", (req, res, next) => {
     db.query(
         'SELECT * FROM bitcoin',
@@ -43,3 +44,22 @@ app.get("/data/bitcoin", (req, res, next) => {
         }
     );
 });
+
+//GET request that returns date/price of crypto data for all coins
+app.get("/data/all", (req, res, next) => {
+    var sql_string = 'SELECT * FROM bitcoin;';
+    sql_string += 'SELECT * FROM ethereum;';
+
+    db.query(
+        sql_string,
+        (error, results) => {
+            if (error) {
+                console.error(error);
+                res.status(500).json({status: 'error'});
+            } else {
+                res.status(200).send(results);
+            }
+        }
+    );
+});
+

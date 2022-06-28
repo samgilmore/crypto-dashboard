@@ -54,10 +54,21 @@
             </div>
         </div>
         <div>
-            <!-- <ngx-charts-line-chart
-                [results]="chart_data"
+            <ngx-charts-line-chart
+                
+                [results]=chart_data
+                [xAxisLabel]="'Date'"
+                [timeline]="true"
+                [yAxisLabel]="'Price (USD)'"
+                [legend]="false"
+                [showXAxisLabel]="true"
+                [showYAxisLabel]="true"
+                [xAxis]="true"
+                [yAxis]="true"
+                [gradient]="true"
+                [scheme]="'night'">
             >
-            </ngx-charts-line-chart> -->
+            </ngx-charts-line-chart>
         </div>
     </div>
 </div>

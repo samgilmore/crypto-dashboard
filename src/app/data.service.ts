@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment';
 
 import { catchError, map, throwError } from 'rxjs';
 
+import { Coin } from './coin.interface';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -28,7 +30,6 @@ export class DataService {
       let coins = this.selectedCoins.join(',');
     
       const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=${ coins }&tsyms=USD&api_key={${ environment.apiKey }}`;
-      //const URL = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC,ETH&tsyms=USD&api_key={${environment.apiKey}}`;
 
       console.log(URL);
 
@@ -44,6 +45,11 @@ export class DataService {
   testBitcoin() {
     let url = "http://localhost:8080/data/bitcoin";
     return this._http.get(url, { responseType: "json" });
+  }
+
+  fetchAllGraphData() {
+    let url = "http://localhost:8080/data/all";
+    return this._http.get<[Coin[]]>(url)
   }
 
 }
