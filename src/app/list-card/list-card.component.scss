@@ -1,5 +1,12 @@
 $main-color: #510080;
 
+@media only screen and (max-width: 560px) {
+    .chart-div {
+        display: none;
+    }
+}
+    
+
 .card {
     background-color: white;
     width: 75vw;
@@ -130,5 +137,18 @@ $main-color: #510080;
                 color: darkred;
             }
         }
+
     }
+}
+
+::ng-deep svg.ngx-charts {
+    float: none !important;
+    // min-height: 250px !important;
+    margin-top: 30px !important;
+    // max-height: 35% !important;
+    max-height: 400px !important;
+}
+
+::ng-deep ngx-charts-outer {
+    width: 100% !important;
 }

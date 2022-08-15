@@ -53,10 +53,11 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="chart-div" style="justify-content: center; align-items: center;">
             <ngx-charts-line-chart
+                class="chart"
                 
-                [results]=chart_data
+                [results]=singleChartData
                 [xAxisLabel]="'Date'"
                 [timeline]="true"
                 [yAxisLabel]="'Price (USD)'"
